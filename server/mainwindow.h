@@ -28,7 +28,6 @@ public slots:
 
     void onServerNewConnection();
     void onClientDisconnected();
-    void onClientReadyRead();
     void OnCelsiusReadyRead();
 
 };
