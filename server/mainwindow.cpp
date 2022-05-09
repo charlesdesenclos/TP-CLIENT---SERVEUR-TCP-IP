@@ -45,21 +45,7 @@ void MainWindow::onClientDisconnected()
     QObject::connect(obj, SIGNAL(disconnect()), this, SLOT(onClientDisconnected()));
     obj->deleteLater();
 }
-void MainWindow::onClientReadyRead()
-{
-    QTcpSocket * obj = qobject_cast<QTcpSocket*> (sender () );
-    QByteArray data = obj->read(obj->bytesAvailable());
-    QString donnees(data);
-    donnees.chop(1); //enleve le ?
-    if (donnees.data()[0]=='H'&&donnees.data()[1]=='r'){
-        int val = rand()%100;
-    }
-    else if(donnees.data()[0]=='T'&&donnees.data()[1]=='d'|| donnees.data()[1]=='f'){
-        int val = (rand() % 56) - 20;
-    }
-    donnees.prepend (','); //ajoute la virgule
-    //obj-ewrite():
-}
+
 
 void MainWindow::OnCelsiusReadyRead()
 {
